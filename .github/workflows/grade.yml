@@ -1,0 +1,13 @@
+# Файл студента
+name: Autograding
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  call-hidden-grading:
+    # Вызываем пайплайн из приватного репозитория организации
+    uses: itmo-applied-statistics/as-26-fall-hw-tests/.github/workflows/hidden-grade.yml@main
+    
+    secrets: inherit # Пробрасываем секреты организации внутрь
